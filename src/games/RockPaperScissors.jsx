@@ -14,20 +14,20 @@ export default function RockPaperScissors() {
         setComputerChoice(randomChoice);
         
         if (choice === randomChoice) {
-        setResult('Unentschieden!');
+        setResult('Draw!');
         } else if (
         (choice === 'scissors' && randomChoice === 'paper') ||
         (choice === 'rock' && randomChoice === 'scissors') ||
         (choice === 'paper' && randomChoice === 'rock'))
         {
-        setResult('Du gewinnst!');
+        setResult('U WON!');
         } else {
-        setResult('Du verlierst!');
+        setResult('U LOST!');
         }
     }
   
     return (
-    <div>
+    <div style={{ textAlign: 'center' }}>
       <h2>✂️ Rock Paper Scissors 🪨</h2>
 
       <button onClick={() => play('scissors')}> Scissors</button>
@@ -35,7 +35,7 @@ export default function RockPaperScissors() {
       <button onClick={() => play('paper')}> Paper</button>
       
       <div style={{ marginTop: '20px' }}>
-        <p>Deine Wahl: {playerChoice}</p>
+        <p>Your Choice: {playerChoice}</p>
         <p>Computer: {computerChoice}</p>
         <p><strong>{result}</strong></p>
       </div>

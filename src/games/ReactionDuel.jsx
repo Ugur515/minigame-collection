@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function ReactionDuel() {
-  const [status, setStatus] = useState('Bereit?');
+  const [status, setStatus] = useState('ready?');
   const [startTime, setStartTime] = useState(null);
   const [reactionTime, setReactionTime] = useState(null);
   const timeoutRef = useRef(null);
@@ -10,38 +10,38 @@ export default function ReactionDuel() {
 
   function startGame() {
     setReactionTime(null);
-    setStatus('Warte auf Grün...');
+    setStatus('Wait for green...');
     tooSoonRef.current = false;
 
     const delay = Math.random() * 4000 + 1000;
 
     timeoutRef.current = setTimeout(() => {
       setStartTime(Date.now());
-      setStatus('Jetzt klicken!');
+      setStatus('click now!');
     }, delay);
   }
 
   function handleClick() {
-    if (status === 'Jetzt klicken!') {
+    if (status === 'click now!') {
       const endTime = Date.now();
       const reaction = endTime - startTime;
       setReactionTime(reaction);
-      setStatus('Gut gemacht!');
-    } else if (status === 'Warte auf Grün...') {
+      setStatus('great job!');
+    } else if (status === 'Wait for green...') {
       clearTimeout(timeoutRef.current);
-      setStatus('Zu früh geklickt!');
+      setStatus('clicked tooo early!');
       tooSoonRef.current = true;
     }
   }
 
   function getLedColor() {
     switch (status) {
-      case 'Warte auf Grün...':
+      case 'wait for green...':
         return 'red';
-      case 'Jetzt klicken!':
+      case 'click now!':
         return 'green';
-      case 'Zu früh geklickt!':
-      case 'Gut gemacht!':
+      case 'clicked tooo early!':
+      case 'great job!':
         return 'gray';
       default:
         return 'gray';
@@ -50,7 +50,7 @@ export default function ReactionDuel() {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <h2>⚡ Reaktionsduell</h2>
+      <h2>⚡ Reaction duel</h2>
       <p>Status: {status}</p>
 
       <div
@@ -64,13 +64,13 @@ export default function ReactionDuel() {
         }}
       />
 
-      {reactionTime !== null && <p>Reaktionszeit: {reactionTime} ms</p>}
+      {reactionTime !== null && <p>reactiontime: {reactionTime} ms</p>}
 
       <button onClick={startGame}>Start</button>
-      <button onClick={handleClick} disabled={status === 'Bereit?'}>Klick!</button>
+      <button onClick={handleClick} disabled={status === 'ready?'}>click!</button>
 
       <br /><br />
-      <Link to="/">🔙 Zurück zum Menü</Link>
+      <Link to="/">🔙 Back to menu</Link>
     </div>
   );
 }
