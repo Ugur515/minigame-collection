@@ -1,0 +1,15 @@
+.RPS {
+  background-color: #f0eada; /* Sanfter beiger Hintergrund */
+  min-height: 100vh;         /* Seite füllt gesamte Höhe */
+  display: flex;             /* Flexbox für Zentrierung */
+  flex-direction: column;    /* Elemente vertikal anordnen */
+  align-items: center;       /* Horizontal zentrieren */
+  justify-content: center;   /* Vertikal zentrieren */
+  font-family: 'Segoe UI', sans-serif; /* Moderne, gut lesbare Schrift */
+  padding: 20px;             /* Abstand zum Rand */
+}
+
+.RPS h2 {
+  font-size: 3rem;           /* Große Überschrift */
+  margin-bottom: 10px;       /* Abstand nach unten */
+}

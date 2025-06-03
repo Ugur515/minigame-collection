@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import './TicTacToe.css';
 
 export default function TicTacToe() {
   
@@ -32,15 +33,7 @@ export default function TicTacToe() {
     );
   }
     return (
-    <div className='tictactoe' 
-    style={{
-        backgroundImage: "url('/assets/img/smoke.png')",
-         backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      minHeight: '100vh',
-      textAlign: 'center',
-      }}
-      >
+    <div className='tictactoe'>
       <h2>❌ Tic Tac Toe ⭕</h2>
       <p>{winner ? `Gewinner: ${winner}` : `Player: ${isXNext ? 'X' : 'O'}`}</p>
       
@@ -53,7 +46,6 @@ export default function TicTacToe() {
           </div>
         ))}
       </div>
-
       <button onClick={resetGame}>reset</button>
       <Link to="/">🔙 Back to menu</Link>
     </div>

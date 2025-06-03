@@ -1,0 +1,38 @@
+.ReactionDuel {
+  background-color: #f0eada; /* Sanfter beiger Hintergrund */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.ReactionDuel h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.ReactionDuel p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.led{
+    margin: 20px auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.ReactionDuel button:hover:not(:disabled) {
+  background-color: #ddd;
+}
+
+.ReactionDuel button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

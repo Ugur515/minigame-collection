@@ -1,28 +1,62 @@
 .memory {
-  text-align: center;
+  background-color: #f0eada; /* Sanfter beiger Hintergrund */
+  min-height: 100vh;         /* Seite füllt gesamte Höhe */
+  display: flex;             /* Flexbox für Zentrierung */
+  flex-direction: column;    /* Elemente vertikal anordnen */
+  align-items: center;       /* Horizontal zentrieren */
+  justify-content: center;   /* Vertikal zentrieren */
+  font-family: 'Segoe UI', sans-serif; /* Moderne, gut lesbare Schrift */
+  padding: 20px;             /* Abstand zum Rand */
+}
+
+.memory h2 {
+  font-size: 3rem;           /* Große Überschrift */
+  margin-bottom: 10px;       /* Abstand nach unten */
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 60px);
-  grid-gap: 10px;
+  grid-template-columns: repeat(4, 80px); /* Größere Karten */
+  gap: 15px;                /* Abstand zwischen Karten */
   justify-content: center;
   margin: 20px auto;
 }
 
 .card {
-  width: 60px;
-  height: 60px;
-  font-size: 2rem;
+  width: 80px;
+  height: 80px;
+  font-size: 2.5rem;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ddd;
-  border-radius: 10px;
+  background-color: #fffbe6; /* Heller Kartenhintergrund */
+  border: 2px solid #444;    /* Dunkle Umrandung */
+  border-radius: 12px;       /* Abgerundete Ecken */
   cursor: pointer;
   user-select: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Sanfter Schatten */
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);    /* Leicht vergrößern beim Hover */
 }
 
 .card.flipped {
-  background: #fff;
+  background-color: #ffffff; /* Flipped Karten heller anzeigen */
+}
+
+a {
+  margin-top: 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #000;
 }

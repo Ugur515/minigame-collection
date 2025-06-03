@@ -1,0 +1,78 @@
+.tictactoe {
+  background-color: #f0eada; /* Sanfter beiger Hintergrund */
+  min-height: 100vh;         /* Seite füllt gesamte Höhe */
+  display: flex;             /* Flexbox für Zentrierung */
+  flex-direction: column;    /* Elemente vertikal anordnen */
+  align-items: center;       /* Horizontal zentrieren */
+  justify-content: center;   /* Vertikal zentrieren */
+  font-family: 'Segoe UI', sans-serif; /* Moderne, gut lesbare Schrift */
+  padding: 20px;             /* Abstand zum Rand */
+}
+
+.tictactoe h2 {
+  font-size: 3rem;           /* Große Überschrift */
+  margin-bottom: 10px;       /* Abstand nach unten */
+}
+
+.tictactoe p {
+  font-size: 1.5rem;         /* Größere Spieleranzeige */
+  margin-bottom: 20px;       /* Abstand nach unten */
+}
+
+.board {
+  display: flex;
+  flex-direction: column;    /* 3 Zeilen untereinander */
+}
+
+.board-row {
+  display: flex;             /* 3 Felder nebeneinander */
+}
+
+.square {
+  width: 100px;              /* Breite jedes Spielfelds */
+  height: 100px;             /* Höhe jedes Spielfelds */
+  margin: 5px;               /* Abstand zwischen Feldern */
+  font-size: 2.5rem;         /* Große X / O */
+  font-weight: bold;         /* Fette Schrift */
+  background-color: #fffbe6; /* Heller Hintergrund fürs Spielfeld */
+  border: 2px solid #444;    /* Dunkle Umrandung */
+  border-radius: 12px;       /* Abgerundete Ecken */
+  cursor: pointer;           /* Mauszeiger ändert sich */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Sanfter Schatteneffekt */
+  transition: transform 0.2s ease;       /* Weicher Hover-Effekt */
+}
+
+.square:hover {
+  transform: scale(1.05);    /* Beim Drüberfahren leicht vergrößern */
+}
+
+button {
+  margin-top: 20px;          /* Abstand zum Spielfeld */
+  font-size: 1.2rem;         /* Größere Schrift */
+  padding: 10px 20px;        /* Innenabstand */
+  background-color: #ffe08a; /* Helles Gelb */
+  border: none;              /* Kein Rahmen */
+  border-radius: 10px;       /* Abgerundete Ecken */
+  cursor: pointer;           /* Hand-Cursor */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Schatten für Tiefe */
+  transition: all 0.2s ease; /* Weicher Hover-Effekt */
+}
+
+button:hover {
+  background-color: #ffcd4d; /* Etwas dunkleres Gelb beim Hover */
+  transform: scale(1.05);    /* Leicht vergrößern */
+}
+
+a {
+  margin-top: 20px;          /* Abstand zum oberen Element */
+  display: inline-block;     /* Ermöglicht margin/padding */
+  text-decoration: none;     /* Kein Unterstrich */
+  color: #333;               /* Dunkles Grau */
+  font-weight: bold;         /* Fette Schrift */
+  font-size: 1.2rem;         /* Lesbare Größe */
+  transition: color 0.2s;    /* Weicher Hover-Farbwechsel */
+}
+
+a:hover {
+  color: #000;               /* Schwarz beim Hover */
+}

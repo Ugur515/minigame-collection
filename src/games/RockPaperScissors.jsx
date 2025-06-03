@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './RPS.css';
 
 export default function RockPaperScissors() {
     const [playerChoice, setPlayerChoice] = useState(null);
@@ -29,14 +30,7 @@ export default function RockPaperScissors() {
     }
   
     return (
-    <div style={{
-      backgroundImage: "url('/assets/img/smoke.png')",
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      minHeight: '100vh',
-      textAlign: 'center',
-      }}
-      >
+    <div className='RPS'>
       <h2>✂️ Rock Paper Scissors 🪨</h2>
 
       <button onClick={() => play('scissors')}> Scissors</button>

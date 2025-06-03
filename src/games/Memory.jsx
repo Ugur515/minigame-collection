@@ -47,15 +47,7 @@ export default function Memory() {
   }
 
   return (
-    <div className="memory"
-    style={{
-      backgroundImage: "url('/assets/img/smoke.png')",
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      minHeight: '100vh',
-      textAlign: 'center',
-      }}
-      >
+    <div className="memory">
       <h2>🧠 Memory</h2>
       <div className="grid">
         {cards.map((card, index) => {
