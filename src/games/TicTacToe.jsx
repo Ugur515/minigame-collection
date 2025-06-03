@@ -32,7 +32,15 @@ export default function TicTacToe() {
     );
   }
     return (
-    <div className='tictactoe' style={{textAlign:'center'}}>
+    <div className='tictactoe' 
+    style={{
+        backgroundImage: "url('/assets/img/smoke.png')",
+         backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      minHeight: '100vh',
+      textAlign: 'center',
+      }}
+      >
       <h2>❌ Tic Tac Toe ⭕</h2>
       <p>{winner ? `Gewinner: ${winner}` : `Player: ${isXNext ? 'X' : 'O'}`}</p>
       

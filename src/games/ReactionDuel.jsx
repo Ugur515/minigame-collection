@@ -49,7 +49,14 @@ export default function ReactionDuel() {
   }
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{
+      backgroundImage: "url('/assets/img/smoke.png')",
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      minHeight: '100vh',
+      textAlign: 'center',
+      }}
+      >
       <h2>⚡ Reaction duel</h2>
       <p>Status: {status}</p>
 

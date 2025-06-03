@@ -29,7 +29,14 @@ export default function RockPaperScissors() {
     }
   
     return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{
+      backgroundImage: "url('/assets/img/smoke.png')",
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      minHeight: '100vh',
+      textAlign: 'center',
+      }}
+      >
       <h2>✂️ Rock Paper Scissors 🪨</h2>
 
       <button onClick={() => play('scissors')}> Scissors</button>
