@@ -1,0 +1,28 @@
+.memory {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.card {
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card.flipped {
+  background: #fff;
+}

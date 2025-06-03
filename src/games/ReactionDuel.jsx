@@ -13,30 +13,30 @@ export default function ReactionDuel() {
     setStatus('Wait for green...');
     tooSoonRef.current = false;
 
-    const delay = Math.random() * 4000 + 1000;
+    const delay = Math.random() * 4000 + 1000; // 1-5 Sekunden Verzögerung
 
     timeoutRef.current = setTimeout(() => {
-      setStartTime(Date.now());
-      setStatus('click now!');
+      setStartTime(Date.now()); // Zeitpunkt speichern
+      setStatus('click now!'); // Status wechseln
     }, delay);
   }
 
   function handleClick() {
     if (status === 'click now!') {
-      const endTime = Date.now();
-      const reaction = endTime - startTime;
+      const endTime = Date.now(); // Jetztzeit erfassen
+      const reaction = endTime - startTime; // Differenz = Reaktionszeit
       setReactionTime(reaction);
       setStatus('great job!');
     } else if (status === 'Wait for green...') {
-      clearTimeout(timeoutRef.current);
-      setStatus('clicked tooo early!');
+      clearTimeout(timeoutRef.current); // Verzögerung abbrechen
+      setStatus('clicked tooo early!'); // Zu früh gedrückt
       tooSoonRef.current = true;
     }
   }
 
   function getLedColor() {
     switch (status) {
-      case 'wait for green...':
+      case 'Wait for green...':
         return 'red';
       case 'click now!':
         return 'green';

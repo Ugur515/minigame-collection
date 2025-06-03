@@ -10,9 +10,11 @@ export default function RockPaperScissors() {
         const options = ['rock', 'paper', 'scissors'];
         const randomChoice = options[Math.floor(Math.random()*3)];
         
+        //auswahl speichern
         setPlayerChoice(choice);
         setComputerChoice(randomChoice);
         
+        //ergebnis berechnen 
         if (choice === randomChoice) {
         setResult('Draw!');
         } else if (

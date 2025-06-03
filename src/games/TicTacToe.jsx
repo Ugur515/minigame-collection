@@ -4,15 +4,16 @@ import { useState } from 'react';
 export default function TicTacToe() {
   
     const [squares, setSquares] = useState(Array(9).fill(null));
-    const [isXNext, setIsXNext] = useState(true);
+    const [isXNext, setIsXNext] = useState(true); //true = Spieler X ist am Zug, false = Spieler O
 
     const winner = calculateWinner(squares);
   
   
   function handleClick(index){
     if(squares[index] || winner) return; // schon belegt oder gewonnen
-    const newSquares = [...squares];
+    const newSquares = [...squares]; // Neues Array kopieren
     newSquares[index] = isXNext ? 'X' : 'O';
+    // Aktualisiere Spielfeld & wechsle Spieler
     setSquares(newSquares);
     setIsXNext(!isXNext);
   }
@@ -22,6 +23,7 @@ export default function TicTacToe() {
     setIsXNext(true);
   }
   
+  //Eine einzelne Spielfläche
   function renderSquare(index){
     return(
         <button className='square' onClick={()=> handleClick(index)}>
@@ -56,10 +58,12 @@ function calculateWinner(s) {
     [0,3,6], [1,4,7], [2,5,8], // Spalten
     [0,4,8], [2,4,6]           // Diagonalen
   ];
+  // Jede mögliche Linie durchgehen
   for (let [a,b,c] of lines) {
+     // Wenn alle drei Felder gleich sind und nicht leer
     if (s[a] && s[a] === s[b] && s[a] === s[c]) {
       return s[a];
     }
   }
-  return null;
+  return null;// Kein Gewinner
 }
