@@ -45,7 +45,7 @@ export default function ReactionDuel() {
 
   function triggerjumpScare(){
     setJumpScare(true);
-    const audio = new Audio('/assets/audio/jumpscare.mp3');
+    const audio = new Audio(process.env.PUBLIC_URL + '/assets/audio/jumpscare.mp3');
     audio.play();
     setTimeout(() => setJumpScare(false), 1500);
   }
@@ -83,7 +83,7 @@ export default function ReactionDuel() {
 
       {jumpScare && (
       <img
-        src="/assets/img/jumpscare.jpg"
+        src={process.env.PUBLIC_URL + '/assets/img/jumpscare.jpg'}
         alt="jumpscare"
         className="jumpscare-img"
       />

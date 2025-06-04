@@ -5,7 +5,7 @@ export default function MainMenu() {
   return (
      <div className="menu-container"
       style={{
-        backgroundImage: "url('/assets/img/beige.jpg')",
+        backgroundImage: `url(${process.env.PUBLIC_URL}/assets/img/beige.jpg)`,
       }}
       >
       <div className="menu-content">
