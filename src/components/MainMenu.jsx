@@ -5,7 +5,7 @@ export default function MainMenu() {
   return (
      <div className="menu-container"
       style={{
-        backgroundImage: "url('/assets/img/matrix.jpg')",
+        backgroundImage: "url('/assets/img/beige.jpg')",
       }}
       >
       <div className="menu-content">

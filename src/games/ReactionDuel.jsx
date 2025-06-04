@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './ReactionDuel.css';
-import { useEffect} from 'react';
 
 export default function ReactionDuel() {
   const [status, setStatus] = useState('ready?');
@@ -12,11 +11,6 @@ export default function ReactionDuel() {
   const [jumpScare,setJumpScare] = useState(false);
   const missCount = useRef(0);
 
-  const jumpscareAudioRef = useRef(null);
-
-useEffect(() => {
-  jumpscareAudioRef.current = new Audio('/assets/audio/jumpscare.mp3');
-}, []);
 
   function startGame() {
     setReactionTime(null);
@@ -51,18 +45,12 @@ useEffect(() => {
 
   function triggerjumpScare(){
     setJumpScare(true);
-     if (jumpscareAudioRef.current) {
-    jumpscareAudioRef.current.currentTime = 0; // Zurückspulen
-    jumpscareAudioRef.current.play().catch(err => {
-      console.error('Audio playback failed:', err);
-    });
+    const audio = new Audio('/assets/audio/jumpscare.mp3');
+    audio.play();
+    setTimeout(() => setJumpScare(false), 1500);
   }
 
-    setTimeout(() => {
-      setJumpScare(false);
-    }, 1500); // 1.5 Sekunden anzeigen
-  }
-
+  //LED cases
   function getLedColor() {
     switch (status) {
       case 'Wait for green...':
@@ -83,26 +71,23 @@ useEffect(() => {
       <p>Status: {status}</p>
         <div className='led'
         style={{backgroundColor:getLedColor()}}>
+        </div>
 
-      </div>
-      
+        {reactionTime !== null && <p>reactiontime: {reactionTime} ms</p>}
 
-      {reactionTime !== null && <p>reactiontime: {reactionTime} ms</p>}
-
-      <button onClick={startGame}>Start</button>
-      <button onClick={handleClick} disabled={status === 'ready?'}>click!</button>
-<p>jumpScare: {jumpScare ? 'TRUE' : 'FALSE'}</p>
+        <button onClick={startGame}>Start</button>
+        <button onClick={handleClick} disabled={status === 'ready?'}>click!</button>
 
       <br /><br />
       <Link to="/">🔙 Back to menu</Link>
 
       {jumpScare && (
-  <img
-    src="/assets/img/smoke.png"
-    alt="jumpscare"
-    className="jumpscare-img"
-  />
-)}
+      <img
+        src="/assets/img/jumpscare.jpg"
+        alt="jumpscare"
+        className="jumpscare-img"
+      />
+      )}
     </div>
   );
 }

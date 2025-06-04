@@ -37,7 +37,7 @@ export default function RockPaperScissors() {
       <button onClick={() => play('rock')}> Rock</button>
       <button onClick={() => play('paper')}> Paper</button>
       
-      <div style={{ marginTop: '20px' }}>
+      <div className='Players'>
         <p>Your Choice: {playerChoice}</p>
         <p>Computer: {computerChoice}</p>
         <p><strong>{result}</strong></p>
