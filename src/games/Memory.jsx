@@ -58,7 +58,7 @@ export default function Memory() {
 
   function triggerjumpScare() {
     setJumpScare(true);
-     const audio = new Audio(process.env.PUBLIC_URL + '/assets/audio/jumpscare.mp3');
+    const audio = new Audio(process.env.PUBLIC_URL + '/assets/audio/jumpscare.mp3');
     audio.play();
     setTimeout(() => setJumpScare(false), 1500);
   }
