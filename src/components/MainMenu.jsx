@@ -4,6 +4,7 @@ import './menu.css';
 export default function MainMenu() {
   const handleStartMusic = () => {
     const audio = new Audio(process.env.PUBLIC_URL + '/assets/audio/lobby.mp3');
+    audio.volume = 0.20
     audio.loop = true;
     audio.play().catch(err => console.warn('Autoplay prevented:', err));
   };
