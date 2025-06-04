@@ -1,3 +1,5 @@
+https://ugur515.github.io/minigame-collection/
+
 # Minigame React Projekt
 
 Dieses kleine React-Projekt dient dazu, den Umgang mit JSX, State und Events zu üben.  
